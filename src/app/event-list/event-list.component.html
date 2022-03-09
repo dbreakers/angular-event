@@ -1,0 +1,53 @@
+<div class="fab-float">
+  <a routerLink="/events/add" ><button mat-fab color="secondary" aria-label="Example icon button with a delete icon">
+<mat-icon style="color:white;">add</mat-icon>
+</button> </a>
+</div>
+
+  <mat-chip-list aria-label="Fish selection">
+  By Status: <mat-chip>Open</mat-chip>
+  <mat-chip>Attending</mat-chip>
+  <mat-chip color="primary" selected>Not Attending</mat-chip>
+  <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="toggleDisplay()">
+    <fa-icon size="lg"  class="sizeicon" [icon]="faMinimise" *ngIf="!tilesize"></fa-icon>
+    <fa-icon size="lg"  class="sizeicon" [icon]="faMaximise" *ngIf="tilesize"></fa-icon>
+  </button>
+</mat-chip-list>
+
+<div class="event-items">
+<div class="event-item" *ngFor="let event of eventsList | async">
+<mat-card class="example-card">
+
+  <mat-card-header>
+  <div mat-card-avatar class="example-header-image"><fa-icon size="lg"  class="fa-avatar" [icon]="['fas', 'campground']" ></fa-icon></div>
+  <mat-card-title><span>{{ event.title }}</span></mat-card-title> 
+  <mat-card-subtitle><span>{{ event.dates[0].from | date:'fullDate'}}</span></mat-card-subtitle>
+</mat-card-header>
+ 
+<img mat-card-image src="https://2ndnewhawscouts.org.uk/wp-content/uploads/2014/12/P1000749-scaled-e1616802428849.jpg" alt="Photo of a Shiba Inu" *ngIf="!tilesize">
+<mat-card-content>
+  
+  <div class="event_attendance"><div class="attending"><fa-icon size="lg"    [icon]=faCheckCircle ></fa-icon>&nbsp;Attending</div><button>Change Attendance</button></div>
+  {{ event.type }}
+<span>Price: {{ event.price }}</span><br>
+<span>{{ event.dates[0].from | date:'fullDate'}}</span> 
+<fa-icon class="fa-icon" [icon]="['fas', 'campground']" ></fa-icon>
+<div [innerHTML]="event.description"></div>
+<div><circle-progress
+  [percent]="85"
+  [radius]="50"
+  [backgroundColor]="'#FFFFFF'"
+  [backgroundPadding]="20"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#78C000'"
+  [innerStrokeColor]="'#C7E596'"
+  [animation]="true"
+  [animationDuration]="300"></circle-progress></div>
+ 
+</mat-card-content>
+</mat-card>
+</div>
+</div>
+
+

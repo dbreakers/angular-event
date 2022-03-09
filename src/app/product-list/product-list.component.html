@@ -1,0 +1,43 @@
+<h2>Products</h2>
+Hello World
+ <mat-slider  thumbLabel  min="1" max="100" step="1" value="50"></mat-slider>
+<mat-selection-list #shoes>
+<mat-list-option *ngFor="let product of products">
+<mat-list-item>
+<img matListAvatar src="https://ghavatars.staticblitz.com/dbreakers.png" alt="...">
+  <h3 matLine>
+    <a [title]="product.name + ' details'"   [routerLink]="['/products', product.id]">>
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description" matLine>
+    Description: {{ product.description }}  
+  </p>
+  <p matLine>&nbsp;</p> 
+  <mat-chip-list aria-label="Fish selection" matLine>
+  <mat-chip>One  fish</mat-chip>
+  <mat-chip>Two fish</mat-chip>
+  <mat-chip color="primary" selected>Primary fish</mat-chip>
+  <mat-chip color="accent" selected>Accent fish</mat-chip>
+</mat-chip-list>
+  
+  <p matLine>
+  <button (click)="share()" >
+    Share
+  </button>
+ 
+  <app-product-alerts
+  [product]="product"  (notify)="onNotify()" >
+</app-product-alerts>
+</p>
+</mat-list-item>
+</mat-list-option>
+</mat-selection-list>
+
+ 
+>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

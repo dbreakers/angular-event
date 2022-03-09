@@ -1,0 +1,128 @@
+<h2>Create a Diary Entry</h2>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill" matLine>
+    <mat-label>Diary Type</mat-label>
+    <mat-select    formControlName="type"  > 
+      <mat-option [value]="1"  >Regular Programme</mat-option>
+      <mat-option [value]="2" >Event</mat-option>
+     <mat-option [value]="3" >Course or Training</mat-option>
+      <mat-option [value]="4" >Adult Meeting</mat-option>
+    </mat-select >
+  </mat-form-field>
+  <mat-form-field class="titlewidth" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="" value="" formControlName="title" >
+  </mat-form-field>
+ <!-- Title: <input type="text"  /> -->
+
+
+  
+<h3>Description</h3> 
+<app-editor-toolbar [editor]="editor"></app-editor-toolbar>
+  <div
+  class="
+    
+    xl:w-1/2
+    mt-6
+    h-auto
+    border-black border-2
+    rounded-md
+  "
+>
+  <tiptap-editor  [editor]="editor" 
+  formControlName="description"  [(ngModel)]="value"></tiptap-editor>   
+ <!--input type="textarea" formControlName="description"   />-->
+</div>
+<h3>Dates</h3>
+<mat-slide-toggle formControlName="signup">Sign2 Up needed</mat-slide-toggle>  
+<mat-slide-toggle formControlName="draft">Split Session (members sign up to one)</mat-slide-toggle>
+<div *ngIf="this.eventForm.value.type=='3'||this.eventForm.value.type=='5'">
+  <button class="adddate" mat-fab  (click)="addNewDates()" color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon style="color:white">add</mat-icon>
+  </button>
+</div>
+  <div formArrayName="dates">
+    
+    <div *ngIf="this.eventForm.value.type=='3'||this.eventForm.value.type=='5'">
+    <div
+          *ngFor="let date of eventDates().controls; let dateIndex=index"
+        >
+        <mat-card>
+          <div style="display:flex;justify-content: space-between">
+          <div><div class="mat-icon-button">Session {{dateIndex+1}} of {{eventDates().controls.length}}</div></div>  
+          <div><button *ngIf="dateIndex>0" mat-icon-button type="button" (click)="deleteDates(dateIndex)"><mat-icon >delete</mat-icon></button></div>
+          </div>
+        <div [formGroupName]="dateIndex">
+          <div class="dateindexline">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input   [rangePicker]="picker">
+              <input matStartDate formControlName="from" placeholder="Start date">
+              <input matEndDate formControlName="to" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+            
+         
+        <mat-form-field appearance="fill">
+          <mat-label>Start time</mat-label>
+            <input matInput  formControlName="start" aria-label="12hr format" [ngxTimepicker]="start" readonly>
+           <!--<ngx-material-timepicker-toggle [for]="start"></ngx-material-timepicker-toggle> -->
+            <ngx-material-timepicker #start></ngx-material-timepicker>
+                 
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Finish time</mat-label>
+              <input matInput  formControlName="finish" aria-label="12hr format" [ngxTimepicker]="finish" readonly>
+             <!--<ngx-material-timepicker-toggle [for]="start"></ngx-material-timepicker-toggle> -->
+              <ngx-material-timepicker #finish></ngx-material-timepicker>
+                   
+            </mat-form-field>
+
+
+          
+          
+          </div>
+          
+        
+          
+        </div>
+      </mat-card>
+      <br>
+  </div>
+</div>
+  </div>
+</form>
+
+{{this.eventForm.value | json}}<br>
+<mat-card class="example-card">
+
+  <mat-card-header>
+  <div mat-card-avatar   class="example-header-image">
+    <fa-icon size="lg"  class="fa-avatar" [icon]="faMeet" *ngIf="this.eventForm.value.type=='4'"></fa-icon>
+    <fa-icon size="lg"  class="fa-avatar" [icon]="faTrain" *ngIf="this.eventForm.value.type=='3'"></fa-icon>
+    <fa-icon size="lg"  class="fa-avatar" [icon]="faEvent" *ngIf="this.eventForm.value.type=='2'"></fa-icon>
+    <fa-icon size="lg"  class="fa-avatar" [icon]="faProg" *ngIf="this.eventForm.value.type=='1'"></fa-icon>
+    
+  </div>
+  <mat-card-title><span *ngIf="this.eventForm.value.title">{{this.eventForm.value.title}}</span>
+    <span class="missing" *ngIf="!this.eventForm.value.title">Enter a title</span>
+  </mat-card-title> 
+  <mat-card-subtitle>
+  <span>{{this.eventForm.value.dates[0].from| date:'fullDate'}}</span>
+  <span  class="missing" *ngIf="!this.eventForm.value.dates[0].from">Enter a date</span>
+  </mat-card-subtitle>
+</mat-card-header>
+<img mat-card-image src="https://2ndnewhawscouts.org.uk/wp-content/uploads/2014/12/P1000749-scaled-e1616802428849.jpg" alt="Photo of a Shiba Inu" >
+<mat-card-content>
+  
+<span>Price:</span><br>
+<span></span> 
+ 
+ 
+ 
+</mat-card-content>
+</mat-card>

@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Summer Camp 2022",
+    "type"   : "Section",
+    "dates"   : [{"from":"2022-08-01",
+                  "to":"2022-08-10",
+                  "fromt":"09:00",
+                  "tot":"17:00"
+                }],
+    "places" : 0,
+    "taken"  : 10,
+    "include" : ["Leader","Young Leader"],
+    "description" : "<b>Header</b><p>This is some text</p>",
+    "deadline" : "2022-04-10",
+    "price" : 200,
+    "reminders" : true,
+    "reminder_dates" : ["2022-04-05","2022-03-05"]
+  },
+  {
+    "title": "Climbing Evening",
+    "type"   : "Section Linked",
+    "dates"   : [{"from":"2022-07-01",
+                  "to":"2022-07-01",
+                  "fromt":"09:00",
+                  "tot":"10:00"
+                },
+                {"from":"2022-07-01",
+                  "to":"2022-07-01",
+                  "fromt":"10:00",
+                  "tot":"11:00"
+                }
+              ],
+    "places" : 0,
+    "taken"  : 10,
+    "include" : [],
+    "description" : "<b>Header</b><p>This is some text</p>",
+    "deadline" : "2022-04-01",
+    "price" : 200,
+    "reminders" : true,
+    "reminder_dates" : ["2022-04-05","2022-03-05"]
+  },
+  {
+    "title": "Kayaking Level 3 Course",
+    "type"   : "Course",
+    "dates"   : [{"from":"2022-07-01",
+                  "to":"2022-07-01",
+                  "fromt":"09:00",
+                  "tot":"10:00"
+                },
+                {"from":"2022-07-01",
+                  "to":"2022-07-01",
+                  "fromt":"10:00",
+                  "tot":"11:00"
+                }
+              ],
+    "places" : 0,
+    "taken"  : 10,
+    "include" : ["Leader","Young Leader"],
+    "description" : "<b>Header</b><p>This is some text</p>",
+    "deadline" : "2022-04-01",
+    "price" : 200,
+    "reminders" : true,
+    "reminder_dates" : ["2022-04-05","2022-03-05"]
+  }
+]
