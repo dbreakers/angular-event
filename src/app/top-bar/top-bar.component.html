@@ -1,7 +1,7 @@
 
   <mat-toolbar>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+      <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
     </button>
    <a [routerLink]="['/']">My Application</a>
    <span class="example-spacer"></span>
