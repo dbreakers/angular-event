@@ -1,9 +1,9 @@
 
   <mat-toolbar>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
+      <mat-icon  (click)="toggleSidenav.emit()">menu</mat-icon>
     </button>
-   <a [routerLink]="['/']">My Application</a>
+   <a [routerLink]="['/']">My Application </a>
    <span class="example-spacer"></span>
    <a routerLink="/cart" class="button fancy-button">
     <i class="material-icons">shopping_cart</i>Checkout 

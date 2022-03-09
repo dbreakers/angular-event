@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="example-container" (toggleSidenav)="sidenav.toggle()">
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
                [fixedInViewport]="false" [fixedTopGap]="0"
                [fixedBottomGap]="0">
