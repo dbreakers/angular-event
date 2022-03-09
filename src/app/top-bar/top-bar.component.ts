@@ -6,7 +6,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
-  @Output() toggleSidenav = new EventEmitter<void>();
+ 
+  @Output() toggleSidenav = new EventEmitter();
 }
 
 
