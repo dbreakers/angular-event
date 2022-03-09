@@ -1,6 +1,7 @@
-<mat-sidenav-container class="example-container" (toggleSidenav)="sidenav.toggle()">
+<mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
                [fixedInViewport]="false" [fixedTopGap]="0"
                [fixedBottomGap]="0">
    Sidenav
+   <button (click)="sidenav.toggle()">hh</button>
   </mat-sidenav>
