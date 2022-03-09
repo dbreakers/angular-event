@@ -54,7 +54,7 @@ import { NgxTiptapModule } from 'ngx-tiptap';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { EditorToolbarComponent } from './editor-toolbar/editor-toolbar.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { MenuSidenavComponent } from './menu-sidenav/menu-sidenav.component';
+ 
 @NgModule({
   imports: [
     BrowserModule,
@@ -129,7 +129,7 @@ import { MenuSidenavComponent } from './menu-sidenav/menu-sidenav.component';
     EventListComponent,
     EventCreateComponent,
     EditorToolbarComponent,
-    MenuSidenavComponent
+    
   ],
   bootstrap: [
     AppComponent
