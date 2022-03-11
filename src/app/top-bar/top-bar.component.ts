@@ -6,11 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
- 
-  @Output() toggleSidenav = new EventEmitter();
+  
+  @Output() sidenavToggle = new EventEmitter();
+
+public onToggleSidenav = () => { 
+  this.sidenavToggle.emit();
 }
-
-
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
