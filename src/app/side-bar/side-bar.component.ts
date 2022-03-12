@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
+  @Output() sidenavClose = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+  public onSidenavClose = () => {
+    this.sidenavClose.emit();
   }
 
 }

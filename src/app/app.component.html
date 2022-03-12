@@ -2,7 +2,7 @@
   <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation" mode="side">
       <!--this is a place for us to add side-nav code-->
-      <app-side-bar></app-side-bar>
+      <app-side-bar (sidenavClose)="sidenav.close()"></app-side-bar>
     </mat-sidenav>
     <mat-sidenav-content>
       <app-top-bar (sidenavToggle)="sidenav.toggle()"></app-top-bar>
