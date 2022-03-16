@@ -59,7 +59,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
   addNewDates() {
     var na = this.eventForm.get('dates') as FormArray;
     na.push(this.newDates());
-    console.log("hjjh");
+    
   }
   newDates(): FormGroup {
     return this.fb.group({
