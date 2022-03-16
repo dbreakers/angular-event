@@ -32,6 +32,7 @@ main {
   width: 100%;
 }
 .toolbarNav button span {
+  display: block;
   color: red;
 }
 /*
