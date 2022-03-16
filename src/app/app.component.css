@@ -9,6 +9,7 @@ mat-sidenav {
 
 main {
   padding: 10px;
+  margin-bottom: 70px;
 }
 .toolbarNav {
   position: fixed;
@@ -23,11 +24,15 @@ main {
   -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
   box-shadow: 2px 2px 4px 5px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
 .toolbarNav button {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+.toolbarNav button span {
+  color: red;
 }
 /*
 Copyright Google LLC. All Rights Reserved.
