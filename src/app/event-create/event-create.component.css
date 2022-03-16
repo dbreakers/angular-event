@@ -8,6 +8,8 @@
 .missing {color:lightgrey;}
 .adddate {    color: white;
   float: right;
+  right: 20px;
+  top:10px;
   z-index: 1000;}
   .fa-avatar { 
     margin-top: 10px;

@@ -6,7 +6,7 @@ import {
   FontAwesomeModule,
   FaIconLibrary,
 } from '@fortawesome/angular-fontawesome';
-import { faCampground, faGraduationCap, faCalendarDay, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-event-create',
@@ -24,6 +24,7 @@ export class EventCreateComponent implements OnInit {
   faTrain = faGraduationCap;
   faProg = faCalendarDay;
   faMeet = faHandshake;
+  faInfo = faInfoCircle;
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
