@@ -33,7 +33,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
 
   ngOnInit(): void {
     this.eventForm = this.fb.group({
- //     dates: this.fb.array([]),
+   dates: this.fb.array([]),
       title: '',
       type: '',
       price: 0,
@@ -52,7 +52,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     });
     
   //var na = this.eventForm.controls['dates'] as FormArray;
- // var na = this.eventForm.get('dates') as FormArray;
+ var na = this.eventForm.get('dates') as FormArray;
  //  na.push(this.newDates());
   }
 
