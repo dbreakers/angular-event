@@ -68,7 +68,7 @@
          
         <mat-form-field appearance="fill">
           <mat-label>Start time</mat-label>
-            <input matInput  formControlName="start" aria-label="12hr format" [ngxTimepicker]="start" readonly>
+            <input matInput class="timeinput" formControlName="start" aria-label="12hr format" [ngxTimepicker]="start" readonly>
            <!--<ngx-material-timepicker-toggle [for]="start"></ngx-material-timepicker-toggle> -->
             <ngx-material-timepicker #start></ngx-material-timepicker>
                  
@@ -76,7 +76,7 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Finish time</mat-label>
-              <input matInput  formControlName="finish" aria-label="12hr format" [ngxTimepicker]="finish" readonly>
+              <input matInput class="timeinput"  formControlName="finish" aria-label="12hr format" [ngxTimepicker]="finish" readonly>
              <!--<ngx-material-timepicker-toggle [for]="start"></ngx-material-timepicker-toggle> -->
               <ngx-material-timepicker #finish></ngx-material-timepicker>
                    
