@@ -53,7 +53,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     
   //var na = this.eventForm.controls['dates'] as FormArray;
  var na = this.eventForm.get('dates') as FormArray;
- //  na.push(this.newDates());
+   na.push(this.newDates());
   }
 
   addNewDates() {
@@ -97,7 +97,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
   }
 
   public canExit(): boolean | Observable<boolean> {
-    return this.eventForm.dirty
+    return this.eventForm.value.title
     ? this.openUnsavedChangesDialog()
       : true;
   };
