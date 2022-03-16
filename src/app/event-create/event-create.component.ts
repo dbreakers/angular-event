@@ -53,7 +53,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     
   //var na = this.eventForm.controls['dates'] as FormArray;
   var na = this.eventForm.get('dates') as FormArray;
-  na.push(this.newDates());
+   na.push(this.newDates());
   }
 
   addNewDates() {
