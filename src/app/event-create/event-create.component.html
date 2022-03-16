@@ -1,7 +1,7 @@
 <h2>Create a Diary Entry!</h2>
 <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill" matLine>
-    <mat-label>Diary Type</mat-label>
+    <mat-label>Entry Type</mat-label>
     <mat-select    formControlName="type"  > 
       <mat-option [value]="1"  >Regular Programme</mat-option>
       <mat-option [value]="2" >Event</mat-option>
