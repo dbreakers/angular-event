@@ -56,7 +56,8 @@ import { EditorToolbarComponent } from './editor-toolbar/editor-toolbar.componen
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ActionBarComponent } from './action-bar/action-bar.component';
-import { DeactivateGuardService } from './deactivate-guard.service' 
+import { DeactivateGuardService } from './deactivate-guard.service';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component' 
 @NgModule({
   imports: [
     BrowserModule,
@@ -133,6 +134,7 @@ import { DeactivateGuardService } from './deactivate-guard.service'
     EditorToolbarComponent,
     SideBarComponent,
     ActionBarComponent,
+    ConfirmDialogComponent,
     
   ],
   bootstrap: [

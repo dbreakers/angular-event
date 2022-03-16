@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { IDeactivateComponent } from '../deactivate-guard.service';
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
 
 
 @Component({
@@ -27,7 +28,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
   faProg = faCalendarDay;
   faMeet = faHandshake;
   faInfo = faInfoCircle;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.eventForm = this.fb.group({
@@ -79,9 +80,24 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     this.eventDates().removeAt(dateIndex);
   }
 
+  private openUnsavedChangesDialog(): Observable<boolean> {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '26.5rem',
+      data: { 
+        dialogTitle: 'Unsaved Changes', 
+        dialogMessageLine1: 'You have unsaved changes.',
+        dialogMessageLine2: 'Are you sure you want to leave the page?',
+        yesButtonText: 'Leave this Page',
+        noButtonText: 'Stay on this Page'
+      }
+    });
+
+    return dialogRef.afterClosed();
+  }
+
   public canExit(): boolean {
     return this.eventForm.dirty
-      ? window.confirm('You have unsaved changes.  Are you sure you want to leave the page?')
+    ? this.openUnsavedChangesDialog()
       : true;
   };
 }
