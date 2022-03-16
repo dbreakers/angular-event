@@ -1,12 +1,11 @@
-<div class="dialog-header accent-background">
-  <span class="dialog-header-title">{{data.dialogTitle}}</span>
-</div>
-<div class="dialog-content">
+ 
+<h2 mat-dialog-title>{{data.dialogTitle}}</h2>
+<div class="dialog-content"  class="mat-typography">
   <p>{{data.dialogMessageLine1}}<br/>
   {{data.dialogMessageLine2}}</p>
 </div>
 <div class="dialog-footer">
   <button class="standard-button dialog-button" mat-raised-button [mat-dialog-close]="false" cdkFocusInitial>{{data.noButtonText}}</button>
     
-  <button mat-raised-button color="primary" [mat-dialog-close]="true">{{data.yesButtonText}}</button>
+  <button mat-raised-button cdkFocusInitial [mat-dialog-close]="true">{{data.yesButtonText}}</button>
 </div>
