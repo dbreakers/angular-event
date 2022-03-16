@@ -9,7 +9,7 @@ import {
 import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { IDeactivateComponent } from '../deactivate-guard.service';
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
-
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-event-create',
@@ -80,7 +80,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     this.eventDates().removeAt(dateIndex);
   }
 
-  private openUnsavedChangesDialog(): Observable<boolean> {
+  private openUnsavedChangesDialog(): any  {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '26.5rem',
       data: { 
