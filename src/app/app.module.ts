@@ -55,6 +55,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { EditorToolbarComponent } from './editor-toolbar/editor-toolbar.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ActionBarComponent } from './action-bar/action-bar.component';
  
 @NgModule({
   imports: [
@@ -131,6 +132,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     EventCreateComponent,
     EditorToolbarComponent,
     SideBarComponent,
+    ActionBarComponent,
     
   ],
   bootstrap: [
