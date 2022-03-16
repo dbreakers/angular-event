@@ -45,8 +45,8 @@
 .fab-float {
   flex-direction: column;
   z-index: 1000;
-  top: 70px;
-  right: 15px;
+  top: 100px;
+  right: 30px;
   position:fixed;
   float: right;
   display: flex;
