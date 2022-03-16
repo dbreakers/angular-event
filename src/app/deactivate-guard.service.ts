@@ -20,3 +20,5 @@ export class DeactivateGuardService implements CanDeactivate<IDeactivateComponen
     return component.canExit ? component.canExit() : true;
   }
 }
+
+//https://www.developer.com/languages/javascript/preventing-data-loss-in-angular-applications-using-a-candeactivate-route-guard/
