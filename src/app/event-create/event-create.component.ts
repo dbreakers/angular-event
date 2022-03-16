@@ -10,6 +10,7 @@ import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle
 import { IDeactivateComponent } from '../deactivate-guard.service';
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event-create',
@@ -80,7 +81,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     this.eventDates().removeAt(dateIndex);
   }
 
-  private openUnsavedChangesDialog(): any  {
+  private openUnsavedChangesDialog(): Observable<boolean>    {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '26.5rem',
       data: { 
@@ -95,7 +96,7 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
     return dialogRef.afterClosed();
   }
 
-  public canExit(): boolean {
+  public canExit(): boolean | Observable<boolean> {
     return this.eventForm.dirty
     ? this.openUnsavedChangesDialog()
       : true;
