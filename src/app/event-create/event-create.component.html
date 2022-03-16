@@ -1,4 +1,4 @@
-<h2>Create a Diary Entry</h2>
+<h2>Create a Diary Entry!</h2>
 <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill" matLine>
     <mat-label>Diary Type</mat-label>
@@ -98,6 +98,7 @@
 </form>
 
 {{this.eventForm.value | json}}<br>
+{{this.eventForm.dirty}}<br>
 <mat-card class="example-card">
 
   <mat-card-header>

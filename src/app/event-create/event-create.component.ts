@@ -7,6 +7,8 @@ import {
   FaIconLibrary,
 } from '@fortawesome/angular-fontawesome';
 import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { IDeactivateComponent } from '../deactivate-guard.service';
+
 
 @Component({
   selector: 'app-event-create',
@@ -14,7 +16,7 @@ import { faCampground, faGraduationCap, faCalendarDay, faHandshake, faInfoCircle
   styleUrls: ['./event-create.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class EventCreateComponent implements OnInit {
+export class EventCreateComponent implements OnInit, IDeactivateComponent {
   eventForm! : FormGroup;
   editor = new Editor({
     extensions: [StarterKit],
@@ -76,4 +78,10 @@ export class EventCreateComponent implements OnInit {
   deleteDates(dateIndex: number) {
     this.eventDates().removeAt(dateIndex);
   }
+
+  public canExit(): boolean {
+    return this.eventForm.dirty
+      ? window.confirm('You have unsaved changes.  Are you sure you want to leave the page?')
+      : true;
+  };
 }

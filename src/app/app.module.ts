@@ -56,7 +56,7 @@ import { EditorToolbarComponent } from './editor-toolbar/editor-toolbar.componen
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ActionBarComponent } from './action-bar/action-bar.component';
- 
+import { DeactivateGuardService } from './deactivate-guard.service' 
 @NgModule({
   imports: [
     BrowserModule,
@@ -102,7 +102,7 @@ import { ActionBarComponent } from './action-bar/action-bar.component';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'events', component: EventListComponent },
-      { path: 'events/add', component: EventCreateComponent },
+      { path: 'events/add', component: EventCreateComponent, canDeactivate: [DeactivateGuardService]  },
     ]),
     BrowserAnimationsModule,
     FontAwesomeModule,
