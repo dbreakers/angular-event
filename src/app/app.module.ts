@@ -57,7 +57,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ActionBarComponent } from './action-bar/action-bar.component';
 import { DeactivateGuardService } from './deactivate-guard.service';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component' 
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { MemberListComponent } from './member-list/member-list.component';
+import { MembersPageComponent } from './members-page/members-page.component' 
 @NgModule({
   imports: [
     BrowserModule,
@@ -103,6 +105,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'events', component: EventListComponent },
+      { path: 'members', component: MembersPageComponent },
       { path: 'events/add', component: EventCreateComponent, canDeactivate: [DeactivateGuardService]  },
     ]),
     BrowserAnimationsModule,
@@ -135,6 +138,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     SideBarComponent,
     ActionBarComponent,
     ConfirmDialogComponent,
+    MemberListComponent,
+    MembersPageComponent,
     
   ],
   bootstrap: [

@@ -1,0 +1,6 @@
+<p>member-list works!</p>
+<div *ngFor="let member of membersList | async">
+<div style="display:flex; padding: 10px;">
+ <img style="border-radius: 25px;" src="https://i.pravatar.cc/50?{{member.firstname}}"> {{member.firstname}} {{member.secondname}}  
+<div>
+</div>
