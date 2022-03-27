@@ -7,7 +7,7 @@ import { MembersService } from '../members.service';
   styleUrls: ['./members-page.component.css']
 })
 export class MembersPageComponent implements OnInit {
-  membersList: Members[] = [];
+  membersList: any[] = [];
   constructor(private membersService: MembersService) { }
 
   ngOnInit() {

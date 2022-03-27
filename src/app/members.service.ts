@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { HttpErrorHandler, HandleError } from 'http-error-handler.service';
+import { HttpErrorHandler, HandleError } from './http-error-handler.service';
 
 @Injectable({
   providedIn: 'root'

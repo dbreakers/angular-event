@@ -1,8 +1,8 @@
 <p>members-page works!</p>
-<div *ngIf="membersList"><app-member-list [membersList]="membersList"></app-member-list></div>
+ 
 <div *ngIf="membersList">
   rew
-<div *ngFor="let member of membersList| async">
+<div *ngFor="let member of membersList">
 <div style="display:flex; padding: 10px;">
  <img style="width: 50px; height: 50px; background: grey; border-radius: 25px;" src="https://i.pravatar.cc/50?{{member.firstname}}"> {{member.firstname}} {{member.secondname}}  
 <div>
