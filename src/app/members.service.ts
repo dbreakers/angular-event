@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MembersService {
-  getMembersList() {
+  getMembersList(): Observable<Member[]> {
     return this.http.get<Member[]>('/assets/people.json');
   }
   constructor(private http: HttpClient) { }
