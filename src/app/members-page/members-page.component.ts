@@ -7,6 +7,7 @@ import { MembersService } from '../members.service';
   styleUrls: ['./members-page.component.css']
 })
 export class MembersPageComponent implements OnInit {
+  membersList: Members[] = [];
   constructor(private membersService: MembersService) { }
 
   ngOnInit() {
@@ -15,7 +16,7 @@ export class MembersPageComponent implements OnInit {
   
   getmembersservice(): void {
     this.membersService.getMembersList()
-    .subscribe(members => (this.memberslist = members));
+    .subscribe(members => (this.membersList = members));
   }
 
 }
