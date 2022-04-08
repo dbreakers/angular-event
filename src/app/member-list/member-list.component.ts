@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class MemberListComponent implements OnInit {
   //membersList = this.membersService.getMembersList();
-  @Input() membersList: []|undefined;
-  constructor(private membersService: MembersService) { this.membersList=[]; }
+  
+  constructor() {   }
 
   ngOnInit(): void {
    

@@ -8,14 +8,12 @@ import { HttpErrorHandler, HandleError } from './http-error-handler.service';
   providedIn: 'root'
 })
 export class MembersService {
-  private handleError: HandleError;
-  getMembersList(): Observable<Member[]> {
-    return this.http.get<Member[]>('/assets/people.json').pipe(
-      catchError(this.handleError('getHeroes', []))
-    );
+  
+  getMembersList() {
+    return this.http.get<Member[]>('/assets/people.json');
   }
-  constructor(private http: HttpClient,  httpErrorHandler: HttpErrorHandler) { 
-    this.handleError = httpErrorHandler.createHandleError('HeroesService');
+  constructor(private http: HttpClient) { 
+     
   }
 }
 

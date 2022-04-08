@@ -11,7 +11,7 @@ import { IDeactivateComponent } from '../deactivate-guard.service';
 import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 import { Observable } from 'rxjs';
-
+import { MembersService } from '../members.service';
 @Component({
   selector: 'app-event-create',
   templateUrl: './event-create.component.html',
@@ -29,7 +29,8 @@ export class EventCreateComponent implements OnInit, IDeactivateComponent {
   faProg = faCalendarDay;
   faMeet = faHandshake;
   faInfo = faInfoCircle;
-  constructor(private fb:FormBuilder,public dialog: MatDialog) { }
+  eventsList = this.membersService.getMembersList();
+  constructor(private fb:FormBuilder,public dialog: MatDialog,private membersService: MembersService) { }
 
   ngOnInit(): void {
     this.eventForm = this.fb.group({
